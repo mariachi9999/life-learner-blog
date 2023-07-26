@@ -4,6 +4,7 @@ import getPosts from "@/app/queries/getPosts";
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import urlFor from "../queries/returnImage";
+import Link from "next/link";
 
 // Create interface Person:
 interface Post {
@@ -42,7 +43,9 @@ async function PostsPage({ params }: { params: { id: string } }) {
       <div>
         {posts.map((post: any) => (
           <div key={post.slug.current}>
-            <h2>{post.title}</h2>
+            <Link href={`/post/${post._id}`}>
+              <h2>{post.title}</h2>
+            </Link>
             <PortableText value={post.body} components={ptComponents} />
           </div>
         ))}
