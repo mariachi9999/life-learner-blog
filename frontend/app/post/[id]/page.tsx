@@ -19,7 +19,7 @@ const ptComponents = {
       }
       return (
         <img
-          alt={value.alt || " "}
+          alt={value.asset._ref || " "}
           loading="lazy"
           src={urlFor(value).width(320).height(240).fit("max").auto("format")}
         />
