@@ -4,6 +4,7 @@ import getPost from "@/app/queries/getPost";
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import urlFor from "../../queries/returnImage";
+import Image from "next/image";
 // import { BlockImage } from "@portabletext/react";
 
 const ptComponents = {
@@ -17,11 +18,20 @@ const ptComponents = {
       if (!value?.asset?._ref) {
         return null;
       }
+      const src = urlFor(value)
+        .width(320)
+        .height(240)
+        .fit("max")
+        .auto("format")
+        .url();
       return (
-        <img
+        <Image
           alt={value.asset._ref || " "}
           loading="lazy"
-          src={urlFor(value).width(320).height(240).fit("max").auto("format")}
+          src={src}
+          width={500}
+          height={500}
+          unoptimized={true}
         />
       );
     },
