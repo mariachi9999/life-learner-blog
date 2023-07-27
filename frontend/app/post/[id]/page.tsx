@@ -4,10 +4,16 @@ import getPost from "@/app/queries/getPost";
 import React from "react";
 import { PortableText } from "@portabletext/react";
 import urlFor from "../../queries/returnImage";
+// import { BlockImage } from "@portabletext/react";
 
 const ptComponents = {
   types: {
-    image: ({ value }) => {
+    image: ({
+      value,
+    }: {
+      value: { _type: string; _key: string; asset: any };
+    }) => {
+      console.log(value);
       if (!value?.asset?._ref) {
         return null;
       }
