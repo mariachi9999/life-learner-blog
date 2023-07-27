@@ -26,7 +26,7 @@ const ptComponents = {
         .url();
       return (
         <Image
-          alt={value.asset._ref || " "}
+          alt={value?.asset?._ref || " "}
           loading="lazy"
           src={src}
           width={500}
