@@ -14,7 +14,7 @@ const ptComponents = {
     }: {
       value: { _type: string; _key: string; asset: any };
     }) => {
-      console.log(value);
+      // console.log(value);
       if (!value?.asset?._ref) {
         return null;
       }
@@ -42,11 +42,18 @@ type Props = { params: { id: string } };
 
 async function PostPage({ params: { id } }: Props) {
   const post = await getPost(id);
+  console.log(post);
 
   return (
     <div>
       <div key={post.slug.current}>
         <h2>{post.title}</h2>
+        <Image
+          src={urlFor(post.mainImage).url()}
+          alt={post.slug.current}
+          width={200}
+          height={200}
+        />
         <PortableText value={post.body} components={ptComponents} />
       </div>
     </div>

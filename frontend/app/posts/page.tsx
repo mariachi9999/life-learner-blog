@@ -5,6 +5,7 @@ import React from "react";
 import { PortableText } from "@portabletext/react";
 import urlFor from "../queries/returnImage";
 import Link from "next/link";
+import Image from "next/image";
 
 // Create interface Person:
 interface Post {
@@ -17,15 +18,29 @@ interface Post {
 
 const ptComponents = {
   types: {
-    image: ({ value }) => {
+    image: ({
+      value,
+    }: {
+      value: { _type: string; _key: string; asset: any };
+    }) => {
+      // console.log(value);
       if (!value?.asset?._ref) {
         return null;
       }
+      const src = urlFor(value)
+        .width(320)
+        .height(240)
+        .fit("max")
+        .auto("format")
+        .url();
       return (
-        <img
-          alt={value.alt || " "}
+        <Image
+          alt={value?.asset?._ref || " "}
           loading="lazy"
-          src={urlFor(value).width(320).height(240).fit("max").auto("format")}
+          src={src}
+          width={500}
+          height={500}
+          unoptimized={true}
         />
       );
     },
