@@ -55,10 +55,7 @@ async function PostsPage({ params }: { params: { id: string } }) {
   const posts = await getPosts();
 
   return (
-    <div className="h-auto">
-      <h1>
-        Estos son todos los posts que tengo publicados en <b>sanity</b>
-      </h1>
+    <div className="h-auto w-3/4 p-5 m-0 m-auto flex justify-center sm: w-full">
       <div>
         {posts.map((post: any) => (
           <div key={post.slug.current}>
