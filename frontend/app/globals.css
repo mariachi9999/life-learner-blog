@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html, body { height: 100%;}
+
+p {padding: 5px;}
+
+h3 {
+  padding: 20px;
+}

@@ -55,7 +55,7 @@ async function PostsPage({ params }: { params: { id: string } }) {
   const posts = await getPosts();
 
   return (
-    <div>
+    <div className="h-auto">
       <h1>
         Estos son todos los posts que tengo publicados en <b>sanity</b>
       </h1>
