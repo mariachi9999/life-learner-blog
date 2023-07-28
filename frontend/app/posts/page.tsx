@@ -21,7 +21,11 @@ const ptComponents = {
     image: ({
       value,
     }: {
-      value: { _type: string; _key: string; asset: any };
+      value: {
+        _type: string;
+        _key: string;
+        asset: { _ref: string; _type: string };
+      };
     }) => {
       // console.log(value);
       if (!value?.asset?._ref) {
