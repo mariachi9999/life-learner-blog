@@ -6,6 +6,7 @@ import { PortableText } from "@portabletext/react";
 import urlFor from "../queries/returnImage";
 import Link from "next/link";
 import Image from "next/image";
+import PostCard from "../components/PostCard";
 
 // Create interface Person:
 interface Post {
@@ -53,19 +54,17 @@ const ptComponents = {
 
 async function PostsPage({ params }: { params: { id: string } }) {
   const posts = await getPosts();
+  console.log(posts);
 
   return (
-    <div className="h-auto w-3/4 p-5 m-0 m-auto flex justify-center sm: w-full">
-      <div>
-        {posts.map((post: any) => (
-          <div key={post.slug.current}>
-            <Link href={`/post/${post._id}`}>
-              <h2>{post.title}</h2>
-            </Link>
-            <PortableText value={post.body} components={ptComponents} />
-          </div>
-        ))}
-      </div>
+    <div className="h-auto w-3/4 p-5 m-0 m-auto flex justify-center gap-2 flex-wrap sm: w-full ">
+      {posts.map((post: any) => (
+        <div key={post.slug.current}>
+          <Link href={`/post/${post._id}`}>
+            <PostCard post={post} />
+          </Link>
+        </div>
+      ))}
     </div>
   );
 }
