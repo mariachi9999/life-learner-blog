@@ -8,13 +8,14 @@ import Link from "next/link";
 import Image from "next/image";
 import PostCard from "../components/PostCard";
 
-// Create interface Person:
+// Create interface Post:
 interface Post {
-  name: string;
-  age: number;
-  hairColor: string;
-  weight: number;
-  height: number;
+  title: string;
+  mainImage: {
+    _type: string;
+    asset: { _ref: string; _type: string };
+    summary: string;
+  };
 }
 
 const ptComponents = {

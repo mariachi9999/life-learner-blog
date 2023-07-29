@@ -3,6 +3,15 @@ import urlFor from "../queries/returnImage";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 
+interface Post {
+  title: string;
+  mainImage: {
+    _type: string;
+    asset: { _ref: string; _type: string };
+  };
+  summary: string;
+}
+
 const ptComponents = {
   types: {
     image: ({
@@ -39,7 +48,7 @@ const ptComponents = {
   },
 };
 
-function PostCard({ post }: { post: {} }) {
+function PostCard({ post }: { post: Post }) {
   return (
     <div className="flex w-72 h-72 flex-col border-2 rounded p-2 justify-center items-center max-w-full truncate">
       <h2 className="font-bold self-center py-4">{post.title}</h2>
