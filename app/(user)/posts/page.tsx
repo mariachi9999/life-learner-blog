@@ -3,10 +3,10 @@
 import getPosts from "@/app/queries/getPosts";
 import React from "react";
 import { PortableText } from "@portabletext/react";
-import urlFor from "../queries/returnImage";
+import urlFor from "../../queries/returnImage";
 import Link from "next/link";
 import Image from "next/image";
-import PostCard from "../components/PostCard";
+import PostCard from "../../components/PostCard";
 
 // Create interface Post:
 interface Post {

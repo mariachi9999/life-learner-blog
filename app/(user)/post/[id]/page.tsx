@@ -3,7 +3,7 @@
 import getPost from "@/app/queries/getPost";
 import React from "react";
 import { PortableText } from "@portabletext/react";
-import urlFor from "../../queries/returnImage";
+import urlFor from "../../../queries/returnImage";
 import Image from "next/image";
 // import { BlockImage } from "@portabletext/react";
 
