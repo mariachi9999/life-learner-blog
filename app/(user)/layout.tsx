@@ -1,10 +1,10 @@
 import "../globals.css";
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Navbar from "../components/Navbar";
-import Footer from "../components/Footer";
+import { Mulish } from "next/font/google";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 
-const inter = Inter({ subsets: ["latin"] });
+const mulish = Mulish({ subsets: ["latin"], weight: "700" });
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -21,7 +21,7 @@ export default function RootLayout({
       <head>
         <title>Life learner tips blog 😉</title>
       </head>
-      <body className="h-full">
+      <body className={mulish.className}>
         <Navbar />
         {children}
         <Footer />
