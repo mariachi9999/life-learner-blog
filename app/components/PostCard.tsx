@@ -41,7 +41,7 @@ const ptComponents = {
           width={250}
           height={250}
           unoptimized={true}
-          className="rounded"
+          className=""
         />
       );
     },
@@ -50,12 +50,12 @@ const ptComponents = {
 
 function PostCard({ post }: { post: Post }) {
   return (
-    <div className="flex w-72 h-72 flex-col border-2 rounded p-2 justify-center items-center max-w-full truncate">
-      <h2 className="font-bold self-center py-4">{post.title}</h2>
+    <div className="">
+      <h2 className="">{post.title}</h2>
       <div className="">
         <PortableText value={post.mainImage} components={ptComponents} />
       </div>
-      <p className="self-start py-4">{post.summary}</p>
+      <p className="">{post.summary}</p>
     </div>
   );
 }

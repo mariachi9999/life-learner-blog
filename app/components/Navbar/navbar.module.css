@@ -18,6 +18,9 @@
 }
 
 @media only screen and (max-width: 768px) {
+
+  .navbar {position: sticky;
+  top:0; background-color: white;}
   
   .mobileMenu {
     display: block;
@@ -25,12 +28,15 @@
   }
 
   .menu {
-    position: absolute;
+    
+    position: fixed;
     background-color: red;
-    width: 100%;
-    top: 15%;
+    width: 80%;
+    height: 100vh;
+    top: 5%;
     z-index: 99;
     display: none;
+    margin: 0
   }
 
   .menu a {

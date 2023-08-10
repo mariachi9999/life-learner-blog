@@ -58,7 +58,7 @@ async function PostsPage({ params }: { params: { id: string } }) {
   console.log(posts);
 
   return (
-    <div className="h-auto w-3/4 p-5 m-0 m-auto flex justify-center gap-2 flex-wrap sm: w-full ">
+    <div className={""}>
       {posts.map((post: any) => (
         <div key={post.slug.current}>
           <Link href={`/post/${post._id}`}>

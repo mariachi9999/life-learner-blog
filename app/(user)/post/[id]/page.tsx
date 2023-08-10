@@ -49,9 +49,9 @@ async function PostPage({ params: { id } }: Props) {
   console.log(post);
 
   return (
-    <div className="w-3/4 p-5 m-0 m-auto flex justify-center sm: w-full">
-      <div key={post.slug.current} className="w-full">
-        <h2 className="font-bold text-xl p-10">{post.title}</h2>
+    <div className="">
+      <div key={post.slug.current} className="">
+        <h2 className="">{post.title}</h2>
         <Image
           src={urlFor(post.mainImage).url()}
           alt={post.slug.current}
