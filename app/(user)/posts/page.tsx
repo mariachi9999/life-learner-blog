@@ -6,52 +6,8 @@ import { PortableText } from "@portabletext/react";
 import urlFor from "../../queries/returnImage";
 import Link from "next/link";
 import Image from "next/image";
-import PostCard from "../../components/PostCard";
-
-// Create interface Post:
-interface Post {
-  title: string;
-  mainImage: {
-    _type: string;
-    asset: { _ref: string; _type: string };
-    summary: string;
-  };
-}
-
-const ptComponents = {
-  types: {
-    image: ({
-      value,
-    }: {
-      value: {
-        _type: string;
-        _key: string;
-        asset: { _ref: string; _type: string };
-      };
-    }) => {
-      // console.log(value);
-      if (!value?.asset?._ref) {
-        return null;
-      }
-      const src = urlFor(value)
-        .width(320)
-        .height(240)
-        .fit("max")
-        .auto("format")
-        .url();
-      return (
-        <Image
-          alt={value?.asset?._ref || " "}
-          loading="lazy"
-          src={src}
-          width={500}
-          height={500}
-          unoptimized={true}
-        />
-      );
-    },
-  },
-};
+import BlogPost from "@/app/components/BlogPost/BlogPost";
+import { PostInterface } from "@/app/types/PostInterface";
 
 async function PostsPage({ params }: { params: { id: string } }) {
   const posts = await getPosts();
@@ -62,7 +18,7 @@ async function PostsPage({ params }: { params: { id: string } }) {
       {posts.map((post: any) => (
         <div key={post.slug.current}>
           <Link href={`/post/${post._id}`}>
-            <PostCard post={post} />
+            <BlogPost post={post} />
           </Link>
         </div>
       ))}

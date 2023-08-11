@@ -1,16 +1,8 @@
 import React from "react";
-import urlFor from "../queries/returnImage";
+import urlFor from "../../queries/returnImage";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
-
-interface Post {
-  title: string;
-  mainImage: {
-    _type: string;
-    asset: { _ref: string; _type: string };
-  };
-  summary: string;
-}
+import { PostInterface } from "../../types/PostInterface";
 
 const ptComponents = {
   types: {
@@ -48,7 +40,7 @@ const ptComponents = {
   },
 };
 
-function PostCard({ post }: { post: Post }) {
+function BlogPost({ post }: { post: PostInterface }) {
   return (
     <div className="">
       <h2 className="">{post.title}</h2>
@@ -60,4 +52,4 @@ function PostCard({ post }: { post: Post }) {
   );
 }
 
-export default PostCard;
+export default BlogPost;

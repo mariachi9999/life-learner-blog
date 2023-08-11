@@ -1,7 +1,11 @@
+import Hero from "../components/Hero/Hero";
+import MainContainer from "../components/MainContainer/MainContainer";
+
 export default function IndexPage() {
   return (
     <div className="">
-      <h1>Hello from Index Page</h1>;
+      <Hero />
+      <MainContainer />
     </div>
   );
 }
