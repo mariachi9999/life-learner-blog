@@ -5,14 +5,18 @@ import styles from "./hero.module.css";
 
 function Hero() {
   return (
-    <section className="heroSection">
-      {/* <div className="left"></div>
-      <div className="right">
-        <div className="contentBox">
-          <h1>Seek answers to the puzzles of your life</h1>
+    <section className={styles.heroSection}>
+      <div className={styles.left}></div>
+      <div className={styles.right}>
+        <div className={styles.contentBox}>
+          <span>Seek answers to the puzzles of your life</span>
+          <h1 className={styles.title}>
+            Tell me and I forget. Teach me and I remember. Involve me and I
+            learn.
+          </h1>
         </div>
-      </div> */}
-      <Image
+      </div>
+      {/* <Image
         alt={""}
         loading="lazy"
         src={banner}
@@ -20,7 +24,7 @@ function Hero() {
         // height={500}
         unoptimized={true}
         className={styles.heroImage}
-      />
+      /> */}
     </section>
   );
 }

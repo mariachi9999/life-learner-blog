@@ -1,4 +1,60 @@
-.heroImage {
+.heroSection {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
   height: 60vh;
-  object-fit: cover;
+  position: relative;
+
+}
+
+.left {
+  background-image: url(../../../public/images/banner.jpg);
+  background-size: contain;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #A4A56F;
+
+}
+
+.right {
+  height: 100%;
+}
+
+.heroSection .right {
+  background-color: #DEE2D4;
+  
+}
+
+.heroSection .contentBox {
+  position: absolute;
+  background-color: #fffffc;
+  padding: 32px;
+  width: 35%;
+  top: 50%;
+  left: 65%;
+  transform: translate(-40%,-50% ); 
+}
+
+.title {
+  font-size: 2.5rem;
+
+}
+
+@media only screen and (max-width: 768px) {
+  .heroSection {
+    grid-template-columns: 1fr;
+  }
+  
+  .heroSection .contentBox {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 80% ;
+    height: 50%;
+
+  }
+
+  .title {
+    font-size: 2.5rem;
+  }
 }
