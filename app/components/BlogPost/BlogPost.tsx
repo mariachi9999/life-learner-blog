@@ -3,6 +3,7 @@ import urlFor from "../../queries/returnImage";
 import Image from "next/image";
 import { PortableText } from "@portabletext/react";
 import { PostInterface } from "../../types/PostInterface";
+import styles from "./blogPost.module.css";
 
 const ptComponents = {
   types: {
@@ -43,7 +44,13 @@ const ptComponents = {
 function BlogPost({ post }: { post: PostInterface }) {
   return (
     <div className="">
-      <h2 className="">{post.title}</h2>
+      <div className={styles.lengueta}>
+        <span>{post.publishedAt}</span>
+        {/* <span>
+          <PortableText value={post.categories} components={ptComponents} />
+        </span> */}
+      </div>
+      <h3 className="">{post.title}</h3>
       <div className="">
         <PortableText value={post.mainImage} components={ptComponents} />
       </div>

@@ -6,4 +6,6 @@ export interface PostInterface {
     asset: { _ref: string; _type: string };
   };
   summary: string;
+  publishedAt: string;
+  categories: any;
 }
