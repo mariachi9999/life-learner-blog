@@ -8,6 +8,16 @@
 display: flex;
 justify-content: space-between;
 }
+.title {
+  display: flex;
+  height: 140px;
+  align-items:  center;
+  justify-content: center;
+}
+
+.title h3 {
+  text-align: center;
+}
 
 .blogPost {
 

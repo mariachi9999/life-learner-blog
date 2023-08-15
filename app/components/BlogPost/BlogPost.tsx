@@ -62,7 +62,9 @@ function BlogPost({ post }: { post: PostInterface }) {
           ))}
         </div>
       </div>
-      <h3 className="">{post.title}</h3>
+      <div className={styles.title}>
+        <h3>{post.title}</h3>
+      </div>
       <div className="">
         <PortableText value={post.mainImage} components={ptComponents} />
       </div>
