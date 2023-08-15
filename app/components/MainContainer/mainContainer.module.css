@@ -1,0 +1,8 @@
+.blogsContainer {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.postContainer {
+  margin: 25px;
+}

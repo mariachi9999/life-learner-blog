@@ -5,6 +5,14 @@ import { PortableText } from "@portabletext/react";
 import { PostInterface } from "../../types/PostInterface";
 import styles from "./blogPost.module.css";
 
+function truncateString(input: string, maxLength: number): string {
+  if (input.length <= maxLength) {
+    return input;
+  } else {
+    return input.slice(0, maxLength);
+  }
+}
+
 const ptComponents = {
   types: {
     image: ({
@@ -43,7 +51,7 @@ const ptComponents = {
 
 function BlogPost({ post }: { post: PostInterface }) {
   return (
-    <div className="">
+    <div className={styles.blogPostContainer}>
       <div className={styles.lengueta}>
         <div>
           <span>{post.publishedAt}</span>
@@ -58,7 +66,7 @@ function BlogPost({ post }: { post: PostInterface }) {
       <div className="">
         <PortableText value={post.mainImage} components={ptComponents} />
       </div>
-      <p className="">{post.summary}</p>
+      <p className={styles.summary}>{truncateString(post.summary, 100)}</p>
     </div>
   );
 }

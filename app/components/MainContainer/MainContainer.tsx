@@ -12,16 +12,16 @@ async function MainContainer() {
 
   return (
     <div className={styles.mainContainer}>
-      <div className="blog">
+      <div className={styles.blogsContainer}>
         {posts.map((post: any) => (
-          <div key={post.slug.current}>
+          <div key={post.slug.current} className={styles.postContainer}>
             <Link href={`/post/${post._id}`}>
               <BlogPost post={post} />
             </Link>
           </div>
         ))}
       </div>
-      <div className="aside"></div>
+      <div className={styles.aside}></div>
     </div>
   );
 }
