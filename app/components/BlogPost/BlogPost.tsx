@@ -45,10 +45,14 @@ function BlogPost({ post }: { post: PostInterface }) {
   return (
     <div className="">
       <div className={styles.lengueta}>
-        <span>{post.publishedAt}</span>
-        {/* <span>
-          <PortableText value={post.categories} components={ptComponents} />
-        </span> */}
+        <div>
+          <span>{post.publishedAt}</span>
+        </div>
+        <div>
+          {post.categories.map((category: any) => (
+            <span key={category._id}>{category.title}</span>
+          ))}
+        </div>
       </div>
       <h3 className="">{post.title}</h3>
       <div className="">
