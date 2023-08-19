@@ -3,6 +3,7 @@
   --primary-color: #202020;
   --secondary-color: #f4f7fc;
   --grey: #a6a6a6;  
+  --light-grey: #EDEDED
 }
 
 html {
@@ -24,6 +25,7 @@ html {
 
 body {
   font-family: sans-serif;
+  background-color: var(--light-grey);
 }
 
 h1,h2,h3{

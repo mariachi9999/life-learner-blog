@@ -1,3 +1,25 @@
-#id {
-  background-color: black;
+.footerContainer {
+  display: flex;
+  justify-content: space-between;
+  height: 100px;
+  align-items: center;
+
 }
+
+.left {
+
+}
+
+.center {
+
+}
+
+.right {
+  display: flex;
+  flex-direction: row;
+}
+
+.logo {
+  padding: 2px;
+}
+

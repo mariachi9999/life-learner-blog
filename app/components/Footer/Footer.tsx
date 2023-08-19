@@ -16,37 +16,30 @@ import styles from "./footer.module.css";
 
 function Footer() {
   return (
-    <div id={""} className={""}>
-      <div className="">Made with love 💛</div>
-      <div className="">
-        <nav>
-          <ul className="">
-            <li>
-              <Link href={`https://twitter.com/`} target="_blank" className="">
-                <FaTwitter />
-              </Link>
-            </li>
-            <li>
-              <Link
-                href={`https://instagram.com/`}
-                target="_blank"
-                className=""
-              >
-                <FaInstagram />
-              </Link>
-            </li>
-            <li>
-              <Link href={`https://facebook.com/`} target="_blank" className="">
-                <FaSquareFacebook />
-              </Link>
-            </li>
-            <li>
-              <Link href={`https://linkedin.com/`} target="_blank" className="">
-                <FaLinkedin />
-              </Link>
-            </li>
-          </ul>
-        </nav>
+    <div id={""} className={styles.footerContainer}>
+      <div className={styles.left}></div>
+      <div className={styles.center}>Made with love 💛</div>
+      <div className={styles.right}>
+        <div className={styles.logo}>
+          <Link href={`https://twitter.com/`} target="_blank" className="">
+            <FaTwitter />
+          </Link>
+        </div>
+        <div className={styles.logo}>
+          <Link href={`https://instagram.com/`} target="_blank" className="">
+            <FaInstagram />
+          </Link>
+        </div>
+        <div className={styles.logo}>
+          <Link href={`https://facebook.com/`} target="_blank" className="">
+            <FaSquareFacebook />
+          </Link>
+        </div>
+        <div className={styles.logo}>
+          <Link href={`https://linkedin.com/`} target="_blank" className="">
+            <FaLinkedin />
+          </Link>
+        </div>
       </div>
     </div>
   );

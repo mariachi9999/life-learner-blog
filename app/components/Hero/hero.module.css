@@ -8,7 +8,7 @@
 
 .left {
   background-image: url(../../../public/images/banner.jpg);
-  background-size: contain;
+  background-size: cover;
   height: 100%;
   background-repeat: no-repeat;
   background-position: center;
@@ -45,16 +45,26 @@
     grid-template-columns: 1fr;
   }
   
+  .right {
+    
+    background-image: url(../../../public/images/banner.jpg);
+    background-size: cover;
+  }
+
+  .left {
+    display:none;
+  }
+  
   .heroSection .contentBox {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 80% ;
-    height: 50%;
+    height: 70%;
 
   }
 
   .title {
-    font-size: 2.5rem;
+    font-size: 2rem;
   }
 }

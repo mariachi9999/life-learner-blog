@@ -5,6 +5,8 @@ import React, { useEffect, useState } from "react";
 import styles from "./navbar.module.css";
 import { FaBars } from "react-icons/fa6";
 import { AiOutlineSearch } from "react-icons/ai";
+import Image from "next/image";
+import logo from "../../../public/images/life-logo.jpeg";
 
 function Navbar() {
   const [isOpen, setShow] = useState(false);
@@ -21,7 +23,9 @@ function Navbar() {
 
   return (
     <nav className={styles.navbar}>
-      <div className="logo">Logo</div>
+      <div className={styles.navbarLogoContainer}>
+        <Image className={styles.navbarLogo} alt="logo" src={logo} />
+      </div>
       <div
         className={
           isOpen === true ? styles.menu + " " + styles.show : styles.menu
@@ -30,7 +34,6 @@ function Navbar() {
         <Link href={`/`}>Home</Link>
         <Link href={`/about`}>About</Link>
         <Link href={`/contact`}>Contact</Link>
-        <Link href={`/posts`}>Posts</Link>
         <Link href={`#search`}>
           <AiOutlineSearch />
         </Link>
